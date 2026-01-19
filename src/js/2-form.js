@@ -9,8 +9,8 @@ const STORAGE_KEY = 'feedback-form-state';
 const savedData = localStorage.getItem(STORAGE_KEY);
 if (savedData) {
     Object.assign(formData, JSON.parse(savedData));
-    form.email.value = formData.email;
-    form.message.value = formData.message;
+    form.email.value = formData.email.trim();
+    form.message.value = formData.message.trim();
 }
 
 form.addEventListener('input', (event) => {
